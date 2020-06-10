@@ -32,7 +32,7 @@ In that perspective, it's likely teams give more to humans than verified, and mo
 
 The higher in the hierarchy, the less chance this is a temp and throwable account, the more likely the coins will be put to good use and serve as effective promotion for the project
 
-## Impact on Idena Eco system
+## Impact on Idena Eco system
 
 First impact is a technological helper. We developed the "sign in with idena" backend in python, from scratch by following the official specs.  
 Instead of relying on the official Go/postgresql implementation, we now have - and release as open source - a simple python module that can be used as part of a server or in an autonomous way, integrated to any python app.  
