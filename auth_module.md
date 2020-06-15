@@ -1,6 +1,6 @@
 # Sign in with Idena Python module
 
-Written from scratch, this module adds sign in wit hidena functionality to Python apps and websites.
+Written from scratch, this module adds sign in with idena functionality to Python apps and websites.
 
 requirements: eth_keys
 
