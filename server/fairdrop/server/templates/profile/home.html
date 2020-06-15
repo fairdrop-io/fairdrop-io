@@ -1,0 +1,127 @@
+{% module Template("profile/header.html", current_page="profile") %}
+<!-- modal starts -->
+<div class="modal-container modal opacity-0 pointer-events-none ">
+  <div class="modal-overlay"></div>
+  <div class="modal-body-container">
+    <button class="modal-close modal-close-btn-wrapper"><img class="h-4" src="img/close-icon.svg"></button>
+    <div class="modal-body-wrapper">
+      <div class="modal-body-title"></div>
+      <div class="modal-title-caption-container">
+        <img class="h-4" src="/img/clock-icon.svg">
+        <div class="modal-title-caption-text"></div>
+      </div>
+      <div class="modal-main-content">
+      </div>
+      <div class="modal-footer-container">
+        <button class="modal-close modal-btn-hollow btn-hollow-border md:mt-4 lg:mt-0 hover:btn-hollow-border focus:btn-hollow-border">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal ends -->
+<!-- base container body starts-->
+<div class="content-body-container md:px-8 md:py-6 lg:px-16 lg:py-12">
+<!-- profile body starts-->
+<!-- base container body starts-->
+
+<div class="flex flex-wrap"> 
+  <img class="profile-avatar" src="https://robohash.org/{{ current_user }}.png" alt="Robohash avatar">
+  <div class="profile-text">Welcome!</div>
+</div>
+<div class="rounded-profile-box">
+  <div class="lg:w-1/3 md:w-full">
+    <div class="box-key">Your status</div>
+    <div class="box-value">{{ STATUS }}</div>
+  </div>
+  <div class="lg:w-2/3 md:w-full md:mt-4 lg:mt-0">
+    <div class="box-key">Idena Id</div>
+    <div class="box-value md:">{{ current_user }}</div>
+  </div>
+</div>
+
+<div class="home-messages-container">
+    <ul id="messages-list" class="divide-y divide-color">
+      {% for message in MESSAGES %}
+        <li>
+          <a class="message-container modal-open hover:bg-gray-200 focus:bg-gray-200 hover:rounded-lg focus:rounded-lg" style="cursor:pointer">
+            <div class="w-9/10">
+                <div class="message-title-text">{% raw message[1] %}</div>
+                <div class="message-content-text-data" style="display:none">{% raw message[2] %}</div>
+                <div class="message-footer-container">
+                    <img class="h-4" src="/img/clock-icon.svg">
+                    <div class="message-footer-text">{{ ts_to_human_delay(message[0]) }} ago</div>
+                </div>
+            </div>
+            <button class="message-details-btn w-1/10">
+                <img class="h-4" src="/img/right-arrow-icon.svg">
+            </button>
+          </a>
+        </li>
+      {% end %}
+        <button id="showMoreMessages" class="show-more-btn text-show-more-blue hover:text-show-more-blue focus:text-show-more-blue">
+          Show more messages
+        </button>
+    </ul>
+</div>
+<!-- profile body ends-->
+
+{% include "footer.html" %}
+
+<script>
+    var openmodal = document.querySelectorAll('.modal-open')
+    for (var i = 0; i < openmodal.length; i++) {
+      openmodal[i].addEventListener('click', function(event){
+    	event.preventDefault()
+    	update_modal_content($(this));
+    	toggleModal()
+      })
+    }
+    
+    function update_modal_content(el){
+      $(".modal-main-content").html(el.children("div").children(".message-content-text-data").html());
+      $(".modal-body-title").html(el.children("div").children(".message-title-text").html());
+      $(".modal-title-caption-text").html(el.children("div").children(".message-footer-container").children(".message-footer-text").html());
+      
+    }
+    
+    const overlay = document.querySelector('.modal-overlay')
+    overlay.addEventListener('click', toggleModal)
+    
+    var closemodal = document.querySelectorAll('.modal-close')
+    for (var i = 0; i < closemodal.length; i++) {
+      closemodal[i].addEventListener('click', toggleModal)
+    }
+    
+    document.onkeydown = function(evt) {
+      evt = evt || window.event
+      var isEscape = false
+      if ("key" in evt) {
+    	isEscape = (evt.key === "Escape" || evt.key === "Esc")
+      } else {
+    	isEscape = (evt.keyCode === 27)
+      }
+      if (isEscape && document.body.classList.contains('modal-active')) {
+    	toggleModal()
+      }
+    };
+    
+    
+    function toggleModal () {
+      const body = document.querySelector('body')
+      const modal = document.querySelector('.modal')
+      modal.classList.toggle('opacity-0')
+      modal.classList.toggle('pointer-events-none')
+      body.classList.toggle('modal-active')
+    }
+
+    $(function () {
+    $('#showMoreMessages').click(function () {
+        $('#messages-list li:hidden').slice(0, 3).show();
+        if ($('#messages-list li').length == $('#messages-list li:visible').length) {
+            $('#showMoreMessages').hide();
+        }
+      });
+    });
+    
+     
+  </script>

@@ -1,0 +1,7 @@
+session_duration=3600
+db_path=data/auth.db
+base_url=https://fairdrop.io/auth
+callback_url=https://fairdrop.io/profile
+nonce_endpoint=https://fairdrop.io/auth/nonce
+authentication_endpoint=https://fairdrop.io/auth/authentication
+api_base_path=https://api.idena.io/api/

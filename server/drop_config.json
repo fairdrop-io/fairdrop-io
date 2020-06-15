@@ -1,0 +1,1 @@
+{"name": "test", "draws": [{"name": "draw1", "status": "Human", "winners": 1, "price": 1, "title": "Test drop 1", "message": "You won 1 coin because you are human, reedem code: [reedem_code]"}, {"name": "draw2", "status": "%", "winners": 5, "price": 1, "title": "Test drop 1", "message": "You won 1 coin because you were registered, reedem code: [reedem_code]"}]}

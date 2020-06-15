@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Fairdrop.io</title>
+  <link rel="stylesheet" href="/css/fairdrop.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+  <script src="https://kit.fontawesome.com/b8aa32c67d.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="flex flex-wrap w-full min-h-screen">
+    <!-- side menu starts-->
+    <div class="side-menu-container lg:w-1/5 md:w-1/4">
+      <!-- side bar header starts-->
+      <a href="/" class="side-menu-header-container lg:p-4 md:p-2">
+        <div class="side-menu-title-wrapper">
+          <img class="sidebar-logo" src="/img/fairdrop-hand-logo.png" alt="fairdrop logo">
+          <div class="side-menu-header-text lg:mx-4 md:mx-2">Fairdrop.io</div>
+        </div>
+      </a>
+      <!-- side bar header ends-->
+      <!-- menu item list starts-->
+      <ul class="m-1 py-2">
+        <!-- menu item starts-->
+        <li>
+          <a class="selected-menu-item hover:bg-menu-item-selected" href="/">
+            <img src="/img/home-icon.svg" class="h-4">
+            <div class="menu-item-text">Home</div>
+          </a>
+        </li>
+        <!-- menu item ends-->
+        <!-- menu item starts-->
+        <li>
+          <a class="selected-menu-item bg-menu-item-selected" href="/profile">
+            <img src="/img/profile-icon.svg" class="h-4">
+            <div class="menu-item-text">Profile</div>
+          </a>
+        </li>
+        <!-- menu item ends-->
+        <!-- menu item starts-->
+        <li>
+          <a class="selected-menu-item hover:bg-menu-item-selected" href="/auth/logout/">
+            <img src="/img/logout-icon.svg" class="h-4">
+            <div class="menu-item-text">Logout</div>
+          </a>
+        </li>
+        <!-- menu item ends-->
+      </ul>
+      <!-- menu item list ends-->
+    </div>
+    <!-- side menu ends-->
+    <div class="content-container lg:w-4/5 md:w-3/4">
