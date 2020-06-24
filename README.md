@@ -1,4 +1,3 @@
-
 # Fairdrop
 
 Airdropping coins is nothing new. Proof of work and airdrops are the 2 main ways to - try to - distribute coins from a new project in a "fair" way.  
@@ -38,7 +37,6 @@ In that perspective, it's likely teams give more to humans than verified, and mo
 The higher in the hierarchy, the less chance this is a temp and throwable account, the more likely the coins will be put to good use and serve as effective promotion for the project.
 
 ## Impact on Idena Eco system
-
 First impact is a technological helper. We developed the "Sign in with Idena" backend in python, from scratch by following the official specs.  
 Instead of relying on the official Go/Postgresql implementation, we now have - and release as open source - a simple Python module that can be used as part of a server or in an autonomous way, integrated to any python app.  
 This will be a nice help for any Python dev willing to use "sign in with idena" feature.  
@@ -56,5 +54,9 @@ Since you need to have an Idena id to be eligible to Fairdrops, and fairdrops sh
 So this Fairdrop project should foster a continuous user base growth.
 
 ## More insights
-
 See companion files `install_notes.md` and `auth_module.md`.
+
+## Support the project
+If you want to support the project then please consider donating ETH or DNA to below-mentioned wallet address or create an issue or PR here on GitHub.
+
+ETH/DNA: `0xe2fc55e0c06a036319b28cc9ebd99a0dc75f0785`
